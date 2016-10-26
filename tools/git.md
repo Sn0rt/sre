@@ -12,6 +12,7 @@
 以本项目为例：
 
 1. 推荐配置一下本地的 ~/.gitconfig
+
 ```
 [color]
     ui = auto
@@ -91,22 +92,30 @@ git push self
 ## 冲突解决
 
 提交的Pull Request很可能会遇到冲突，这往往是因为你开发新功能的时候主分支发生了一些变更。首先你需要更新本地的主分支
+
 ```
 git checkout master
 git pull
 ```
 
 然后切回自己的新功能分支来解决冲突
+
 ```
 git checkout new_feature
 git rebase master
 ```
 
 如果有冲突你会进入冲突解决界面里面，根据需要进行调整。解决完冲突后需要强制更新当前分支的内容上去。
+
 ```
 git push self -f
 ```
 
+## 删除远端分支
+
+```
+git push <remote> :<branch>
+```
 ## 推荐阅读
 
 [git文档](https://git-scm.com/book/zh/v2) 中2、3、7、10章节的内容
